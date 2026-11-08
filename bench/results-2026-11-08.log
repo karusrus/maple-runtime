@@ -1,0 +1,45 @@
+09:16:47 gguf 6349082144 bytes, sha256 2fad7b490378 (expected 2fad7b490378)
+09:22:27 build rc=0
+09:22:27 commit 7e30f3a
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| maple 20B TQ2_0 - 2.06 bpw ternary |   5.91 GiB |    20.21 B | CPU        |       3 |           pp512 |         78.00 ± 0.63 |
+| maple 20B TQ2_0 - 2.06 bpw ternary |   5.91 GiB |    20.21 B | CPU        |       3 |          pp2048 |         73.68 ± 0.41 |
+| maple 20B TQ2_0 - 2.06 bpw ternary |   5.91 GiB |    20.21 B | CPU        |       3 |           tg128 |         15.94 ± 0.30 |
+build: 7e30f3a (1)
+| model                          |       size |     params | backend    | threads |            test |                  t/s |
+| ------------------------------ | ---------: | ---------: | ---------- | ------: | --------------: | -------------------: |
+| maple 20B TQ2_0 - 2.06 bpw ternary |   5.91 GiB |    20.21 B | CPU        |       4 |           pp512 |         68.24 ± 0.05 |
+| maple 20B TQ2_0 - 2.06 bpw ternary |   5.91 GiB |    20.21 B | CPU        |       4 |          pp2048 |         64.00 ± 0.06 |
+| maple 20B TQ2_0 - 2.06 bpw ternary |   5.91 GiB |    20.21 B | CPU        |       4 |           tg128 |          8.77 ± 0.05 |
+build: 7e30f3a (1)
+09:27:01 ours cpu t=3 prompt 512
+load 17.06 s, prompt 512 tokens 6.52 s (78.56 tok/s), chunks of 128
+generated 128 tokens 4.15 s (30.82 tok/s)
+09:27:29 ours card-prompt t=3
+load 1.86 s, prompt 512 tokens 2.77 s (184.63 tok/s), chunks of 2048, experts on the card
+generated 128 tokens 4.07 s (31.48 tok/s)
+09:27:38 ours cpu t=3 prompt 2048
+load 1.62 s, prompt 2048 tokens 28.04 s (73.03 tok/s), chunks of 128
+generated 128 tokens 4.36 s (29.36 tok/s)
+09:28:12 ours card-prompt t=3
+load 1.70 s, prompt 2048 tokens 6.39 s (320.65 tok/s), chunks of 2048, experts on the card
+generated 128 tokens 4.62 s (27.73 tok/s)
+09:28:25 ours cpu t=4 prompt 512
+load 1.58 s, prompt 512 tokens 9.97 s (51.38 tok/s), chunks of 128
+generated 128 tokens 6.55 s (19.56 tok/s)
+09:28:43 ours card-prompt t=4
+load 1.65 s, prompt 512 tokens 2.73 s (187.85 tok/s), chunks of 2048, experts on the card
+generated 128 tokens 6.69 s (19.14 tok/s)
+09:28:55 ours cpu t=4 prompt 2048
+load 1.53 s, prompt 2048 tokens 46.46 s (44.08 tok/s), chunks of 128
+generated 128 tokens 7.64 s (16.76 tok/s)
+09:29:50 ours card-prompt t=4
+load 1.71 s, prompt 2048 tokens 6.20 s (330.07 tok/s), chunks of 2048, experts on the card
+generated 128 tokens 8.06 s (15.88 tok/s)
+09:30:07 llama.cpp greedy
+The main reason the sky looks blue is Rayleigh scattering. The sky is not blue because the atmosphere is blue. The sky is not blue because the atmosphere is blue. The sky is not blue because the atmosphere is blue. The sky is
+
+09:30:34 ours greedy
+ Rayleigh scattering. This is the scattering of light by particles in the atmosphere that are much smaller than the wavelength of the light. This scattering is more efficient for shorter wavelengths, so the blue light is
+09:30:40 BENCHDONE
